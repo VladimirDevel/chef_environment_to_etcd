@@ -73,8 +73,7 @@ class ConfigurationImporter():
         files_to_process = []
         for subdir, dirs, files in os.walk(rootdir):
             for file in files:
-                if "avid" in subdir:
-                    if "/attributes" in subdir:
+                if "/attributes" in subdir:
                         files_to_process.append(subdir + '/' + file)
 
         node_elements = []
@@ -120,8 +119,6 @@ class ConfigurationImporter():
                     first = False
                 else:
                     list_tokens += "==>" + key_str
-            if "avid==>acs==>bus==>broker==>host" in list_tokens:
-                print "Yo"
             elements_to_create.append({"path" : list_tokens, "value" : tokens_to_process["value"]})
 
         # Creating common structure
